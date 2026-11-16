@@ -1,0 +1,158 @@
+# ==========================================
+# Go
+# ==========================================
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.a
+*.o
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+*.coverage
+coverage.txt
+coverage.html
+coverage/
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Dependency directories
+# (Uncomment the line below if you are not vendoring dependencies)
+# vendor/
+
+# ==========================================
+# VS Code
+# ==========================================
+# Ignore all .vscode files by default
+.vscode/*
+# But keep the settings that are useful to share with the team
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# VS Code workspace files
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+# ==========================================
+# Fedora / KDE (Linux)
+# ==========================================
+# Temporary files created if a process still has a handle open of a deleted file
+*~
+.fuse_hidden*
+
+# KDE directory preferences (e.g., folder view settings)
+.directory
+
+# Linux trash folders
+.Trash-*
+
+# NFS files created when an open file is removed but is still being accessed
+.nfs*
+
+# ==========================================
+# Environment & Secrets
+# ==========================================
+.env
+.env.*
+# Keep example environment files for others to know which variables are needed
+!.env.example
+!.env.sample
+
+# ==========================================
+# Logs
+# ==========================================
+*.log
+logs/
+
+# ==========================================
+# Build & Temporary Files
+# ==========================================
+bin/
+build/
+dist/
+tmp/
+.cache/
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Air (Go live reload) temporary files
+.air/
+
+# ==========================================
+# Docker & Local Development
+# ==========================================
+docker-compose.override.yml
+
+# ==========================================
+# Local Database Files
+# ==========================================
+*.db
+*.sqlite
+*.sqlite3
+
+# ==========================================
+# Profiling & Debugging
+# ==========================================
+*.prof
+*.pprof
+*.heap
+cpu.prof
+mem.prof
+block.prof
+mutex.prof
+core
+core.*
+
+# ==========================================
+# Other IDEs & Editors
+# ==========================================
+# JetBrains (GoLand, IntelliJ IDEA, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+
+# Editor temporary files
+*.swp
+*.swo
+*~
+.#*
+\#*#
+*.orig
+*.rej
+
+# ==========================================
+# OS Generated Files
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
