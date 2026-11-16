@@ -19,6 +19,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	defer app.DB.Close()
 
 	r := routes.SetUpRoutes(app)
 	server := &http.Server{

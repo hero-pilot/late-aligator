@@ -1,20 +1,28 @@
 package app
 
 import (
+	"database/sql"
 	"fmt"
 	"log"
 	"net/http"
 	"os"
 
 	"github.com/hero-pilot/late-aligator/internal/api"
+	"github.com/hero-pilot/late-aligator/internal/store"
 )
 
 type Application struct {
-	Logger *log.Logger
+	Logger         *log.Logger
 	WorkoutHandler *api.WorkoutHandler
+	DB             *sql.DB
 }
 
 func NewApplication() (*Application, error) {
+	pgDB, err := store.Open()
+	if err != nil {
+		return nil, err
+	}
+
 	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime)
 
 	// our stores will  go here
@@ -23,8 +31,9 @@ func NewApplication() (*Application, error) {
 	workouteHandler := api.NewWorkoutHandler()
 
 	app := &Application{
-		Logger: logger,
+		Logger:         logger,
 		WorkoutHandler: workouteHandler,
+		DB:  pgDB,
 	}
 	return app, nil
 }
