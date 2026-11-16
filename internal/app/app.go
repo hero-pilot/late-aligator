@@ -9,6 +9,7 @@ import (
 
 	"github.com/hero-pilot/late-aligator/internal/api"
 	"github.com/hero-pilot/late-aligator/internal/store"
+	"github.com/hero-pilot/late-aligator/migrations"
 )
 
 type Application struct {
@@ -21,6 +22,11 @@ func NewApplication() (*Application, error) {
 	pgDB, err := store.Open()
 	if err != nil {
 		return nil, err
+	}
+
+	err = store.MigrateFS(pgDB, migrations.FS, ".")
+	if err !=nil {
+		panic(err)
 	}
 
 	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime)
