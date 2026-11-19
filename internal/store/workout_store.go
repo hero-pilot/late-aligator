@@ -15,19 +15,19 @@ type WorkoutEntry struct {
 	ID              int      `json:"id"`
 	ExerciseName    string   `json:"exercise_name"`
 	Sets            int      `json:"sets"`
-	Reps            *int     `json:"resps"`
+	Reps            *int     `json:"reps"`
 	DurationSeconds *int     `json:"duration_seconds"`
 	Weight          *float64 `json:"weight"`
 	Notes           string   `json:"notes"`
 	OrderIndex      int      `json:"order_index"`
 }
 
-type PostgresWorkoutStoe struct {
+type PostgresWorkoutStore struct {
 	db *sql.DB
 }
 
-func NewPostgresWorkoutStore(db *sql.DB) *PostgresWorkoutStoe {
-	return &PostgresWorkoutStoe{
+func NewPostgresWorkoutStore(db *sql.DB) *PostgresWorkoutStore {
+	return &PostgresWorkoutStore{
 		db: db,
 	}
 }
