@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS workout(
     -- user_id
     title VARCHAR(50) NOT NULL,
     duration_minutes INTEGER NOT NULL,
+    description Text,
     calories_burned INTEGER NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
