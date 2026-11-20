@@ -34,7 +34,7 @@ func NewApplication() (*Application, error) {
 	// our stores will  go here
 	workoutStore := store.NewPostgresWorkoutStore(pgDB)
 	//our handlers will go here
-	workouteHandler := api.NewWorkoutHandler(workoutStore)
+	workouteHandler := api.NewWorkoutHandler(workoutStore, logger)
 
 	app := &Application{
 		Logger:         logger,
