@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"time"
 
-	"github.com/ydb-platform/ydb-go-sdk/v3/query"
-	"golang.org/x/crypto/bcrypt"
+	
+	_"golang.org/x/crypto/bcrypt"
 )
 
 
@@ -78,11 +78,10 @@ func (s *PostgresUserStore) UpdateUser(user *User) error{
 		UPDATE users
 		SET username = $1, email = $2, bio = $3, updated_at = CURRENT_TIMESTAMP
 		WHERE id =$4
-		RETURNING updated_at
 	`
-	result, err := s.db.Exec(query, user.Username, user.Email, user.Bio)
+	result, err := s.db.Exec(query, user.Username, user.Email, user.Bio, user.ID)
 	if err != nil {
-		return nil
+		return err
 	}
 	rowsAffected, err := result.RowsAffected()
 	if err !=nil {
