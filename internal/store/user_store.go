@@ -65,7 +65,7 @@ type UserStore interface {
 
 func (s *PostgresUserStore) CreateUser(user *User) error {
 	query := `INSERT INTO users (username, email, password_hash, bio)
-		VALUES ($1,$2,$3,$3)
+		VALUES ($1,$2,$3,$4)
 		RETURNING id, created_at, updated_at
 	`
 	err := s.db.QueryRow(query, user.Username, user.Email, user.PasswordHash.hash, user.Bio).Scan(&user.ID, &user.CreatedAt, &user.UpdatedAt)
